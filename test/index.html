@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+  <meta name="patchjs" content="version=1.0.1,path=./simple/">
+  <title>Patch.js Tests</title>
+  <link href="./lib/mocha.css" rel="stylesheet" />
+  <style>
+    #example {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="mocha"></div>
+  <div id="example"></div>
+  <script src="./lib/expect.js"></script>
+  <script src="./lib/mocha.js"></script>
+  <script>
+    mocha.setup('bdd');
+  </script>
+  <script src="../src/websqldb.js"></script>
+  <script src="../src/index.js"></script>
+  <script src="index.js"></script>
+  <script src="cache.js"></script>
+  <script>
+    mocha.run();
+  </script>
+</body>
+</html>

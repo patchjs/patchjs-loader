@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+  <title>localStorage Tests</title>
+  <script src="../../src/localstorage.js"></script>
+</head>
+<body>
+  <div id="results">processing</div>
+</body>
+<script>
+  var iterationsData;
+  var results = document.getElementById('results');
+
+  (function () {
+
+    var n10b =    '0123456789';
+    var n100b =   repeat(n10b, 10);
+    var n1kib =   repeat(n100b, 10);
+    var n10kib =  repeat(n1kib, 10);
+    var n100kib = repeat(n10kib, 10);
+    var n1mib =   repeat(n100kib, 10);
+    var n10mib =  repeat(n1mib, 10);
+
+    var values = [n10b, n100b, n1kib, n10kib, n100kib, n1mib, n10mib];
+
+    iterationsData = [];
+    for (var majorIndex = 1; majorIndex < values.length; majorIndex++) {
+        var major = values[majorIndex];
+        var minor = values[majorIndex - 1];
+        for (var i = 1; i < 10; i++) {
+            for (var j = 0; j < 10; j++) {
+                iterationsData.push([major, minor, i, j]);
+            }
+        }
+    }
+
+    var index = 0;
+    var oldLength = 0;
+
+    function iteration() {
+        var data = iterationsData[index];
+
+        major = data[0];
+        minor = data[1];
+        i = data[2];
+        j = data[3];
+
+        var string = repeat(major, i) + repeat(minor, j);
+        var length = '' + string.length;
+        patchjs.cache.set('test', string, function (result) {
+          if (result) {
+            results.innerHTML = length + ' characters were stored successfully.';
+          } else {
+            results.innerHTML = oldLength + ' characters were stored successfully,  but ' + length + ' weren\'t.';
+            return;
+          }
+          oldLength = length;
+
+          index++;
+          if (index < iterationsData.length) {
+              setTimeout(iteration, 0);
+          } else {
+              results.innerHTML = oldLength + ' characters were saved successfully, test is stopped.';
+          }
+        });
+    }
+
+    iteration();
+
+    function repeat(string, count) {
+        var array = [];
+        while (count--) {
+            array.push(string);
+        }
+        return array.join('');
+    }
+  })();
+</script>
+</html>

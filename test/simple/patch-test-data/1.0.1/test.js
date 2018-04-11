@@ -1,0 +1,1 @@
+"use strict";window.patchjstest={},patchjstest.getFullYear=function(t){return t.getFullYear()};

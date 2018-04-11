@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no">
+  <meta name="patchjs" content="version=0.0.2">
+  <title>Patch.js demo</title>
+  <script src="../../src/localstorage.js"></script>
+  <script src="../../src/index.js"></script>
+</head>
+<body>
+  <span>hello patchjs</span>
+  <span id="time"></span>
+</body>
+<script>
+  patchjs.config({
+    cache: true,
+    increment: true,
+    debug: false,
+    path: './dist/deepdist/'
+  }).load('index.css').load('index/index.js');
+</script>
+<script src="https://gw.alipayobjects.com/as/g/patchjs/patch-debugger/0.0.4/index.js"></script>
+</html>

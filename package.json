@@ -1,0 +1,35 @@
+{
+  "name": "patch-loader",
+  "description": "incremental script loader",
+  "version": "2.0.0",
+  "author": {
+    "name": "yulongheli",
+  },
+  "contributors": [],
+  "keywords": [
+    "Patch.js",
+    "patch",
+    "patchjs"
+  ],
+  "pre-commit": [
+    "lint"
+  ],
+  "scripts": {
+    "site": "node buildsite.js",
+    "build": "gulp",
+    "server": "http-server",
+    "test": "mocha-phantomjs http://localhost:8080/test/index.html",
+    "lint": "jshint ./src",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "marked": "~0.3.5",
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^2.0.0",
+    "http-server": "^0.10.0",
+    "jshint": "^2.9.4",
+    "mocha-phantomjs": "^4.1.0",
+    "husky": "^0.14.3"
+  }
+}

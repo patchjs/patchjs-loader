@@ -1,0 +1,1 @@
+"use strict";window.patchjstest={},patchjstest.getFullYear=function(t){return console.log("add by heli."),t.getFullYear()};

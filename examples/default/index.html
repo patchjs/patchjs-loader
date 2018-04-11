@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--<meta name="patchjs" content="version=0.2.10">-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no">
+  <title>Patch.js demo</title>
+  <script src="../../src/websqldb.js"></script>
+  <script src="../../src/index.js"></script>
+</head>
+<body>
+  <span>hello patchjs</span>
+  <span id="time"></span>
+</body>
+<script type="text/javascript" src="https://gw.alipayobjects.com/as/g/patchjs/patch-monitor/0.0.15/index.js"></script>
+<script>
+  patchjs.config({
+    cache: true,
+    increment: true,
+    path: 'http://127.0.0.1:8080/dist/default/',
+    version: '0.2.16',
+    exceedQuotaErr: function (url) {
+      this.track('QUOTAERR');
+    }
+  }).load('index.css').load('common.js').wait(function () {
+    console.log('common done!');
+  }).load('index.js', function (url, fromCache) {
+    if (fromCache) {
+      this.track('CACHENODIFF');
+    } else {
+      if (/-\d+\.\d+\.\d+\.js/.test(url)) {
+        this.track('CACHEWITHDIFF'); 
+      } else {
+        this.track('ONLINE');
+      } 
+    }
+  }).wait(function (){
+    console.log('wait..');
+  });
+</script>
+<script src="https://gw.alipayobjects.com/as/g/patchjs/patch-debugger/0.0.4/index.js"></script>
+</html>

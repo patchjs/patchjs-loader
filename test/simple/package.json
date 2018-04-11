@@ -1,0 +1,22 @@
+{
+  "name": "patch-test-data",
+  "version": "1.0.2",
+  "scripts": {
+    "build": "patch-build",
+    "server": "patch-server",
+    "upload": "patch-upload"
+  },
+  "devDependencies": {
+    "@alipay/patch-builder": "^0.2.3",
+    "@alipay/patch-uploader": "^0.1.0"
+  },
+  "patchjs": {
+    "path": "http://localhost:8080/patch-test-data/",
+    "dist": "./",
+    "files": {
+      "test.js": [
+        "./src/test.js"
+      ]
+    }
+  }
+}
