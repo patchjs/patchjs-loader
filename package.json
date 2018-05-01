@@ -1,5 +1,5 @@
 {
-  "name": "patch-loader",
+  "name": "patchjs-loader",
   "description": "incremental script loader",
   "version": "2.0.0",
   "author": {
@@ -9,8 +9,15 @@
   "keywords": [
     "Patch.js",
     "patch",
-    "patchjs"
+    "patchjs",
+    "performance",
+    "optimization",
   ],
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/patchjs/patchjs-loader.git"
+  },
+  "license": "MIT",
   "pre-commit": [
     "lint"
   ],

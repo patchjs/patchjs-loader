@@ -6,7 +6,7 @@
         return;
       }
       try {
-        localStorage['patch-' + key] = JSON.stringify(value);
+        localStorage['patchjs-' + key] = JSON.stringify(value);
         callback(true);
       } catch (e) {
         callback(false);
@@ -17,11 +17,11 @@
         callback(null);
         return;
       }
-      callback(JSON.parse(localStorage['patch-' + key] || null));
+      callback(JSON.parse(localStorage['patchjs-' + key] || null));
     },
     remove: function (key) {
       if (this.isSupported) {
-        localStorage.removeItem('patch-' + key);
+        localStorage.removeItem('patchjs-' + key);
       }
     }
   };
@@ -30,7 +30,7 @@
 
   localStorage.clear = function () {
     for (var p in localStorage) {
-      if (!/^patch-/.test(p)) {
+      if (!/^patchjs-/.test(p)) {
         localStorage.removeItem(p);
       }
     }

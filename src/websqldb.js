@@ -3,7 +3,7 @@
   var cache = {
     init: function () {
       try {
-        db = this.isSupported ?  window.openDatabase('patchdb', '1.0', 'patchjs database', 4 * 1024 * 1024) : null;
+        db = this.isSupported ?  window.openDatabase('patchjsdb', '1.0', 'patchjs database', 4 * 1024 * 1024) : null;
       } catch (e) {
         db = null;
       }

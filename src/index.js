@@ -3,7 +3,6 @@
   var defaultOptions = {
     cache: false,
     increment: false,
-    debug: false,
     diffCount: 5,
     env: ''
   };
@@ -226,7 +225,7 @@
     var jsCode = '';
     for (var i = 0, len = diffCodeArray.length; i < len; i++) {
       var code = diffCodeArray[i];
-      if (typeof code === 'string') {
+      if (Object.prototype.toString(code) === '[object String]') {
         jsCode += code;
       } else {
         var start = code[0] * chunkSize;
