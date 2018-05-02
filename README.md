@@ -1,4 +1,8 @@
-Patch.js is a incremental(character level) script loader for mobile web.
+# Patch.js
+
+## Introduction
+
+Patch.js is a incremental (character level) script loader for mobile web.
 
 ## Reference
 
@@ -72,5 +76,9 @@ environment configuration, such as dev, test, pre, prod.
 **exceedQuotaErr** `Function`
 
 when the quota isn't enough, trigger the function of exceedQuotaErr.
+
+## Other
+
+support localStorage / Web SQL Database, but the two can only choose one.
 
 
