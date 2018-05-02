@@ -62,10 +62,4 @@ describe('Patch.js Unit Tests', function () {
     expect(patchjsObj.combineReqUrl('file.js', true, '1.0.0')).to.be('http://koubei.com/1.0.1/file-1.0.0.js');
     expect(patchjsObj.combineReqUrl('file.js', false, '1.0.0')).to.be('http://koubei.com/1.0.1/file.js');
   });
-
-  it('patchjs.mergeCode (source, chunkSize, diffCodeArray)', function () {
-    var source = '"use strict";window.patchjstest={};';
-    var diffCodeArray = [[0, 2], "hjstest={},patchjstest.getFullYear=function(t){return t.get","FullYear()};"];
-    expect(patchjs.mergeCode(source, 12, diffCodeArray)).to.be('"use strict";window.patchjstest={},patchjstest.getFullYear=function(t){return t.getFullYear()};');
-  });
 });

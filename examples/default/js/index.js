@@ -1,26 +1,7 @@
-const index = {};
+require('../css/index.css');
 
-index.init = () => {
-  const time = document.getElementById('time');
-  time.textContent = utils.format(new Date());
-  console.log('heli..');
-  console.log('heli again..');
-  console.log('test');
-  console.log('test 3+');
-  console.log('test 4');
-  console.log('test 5');
-  console.log('test 7');
-  console.log('by heli.0.0.3777777heli...');
-  console.log('0.2.11 add by xiaohui hahah123a....');
-  // throw new Error('error');
-};
+const utils = require('./util');
 
-window.addEventListener('load', function (event) {
-  alert('script..');
-}, false);
+utils.format();
 
-window.addEventListener('DOMContentLoad', function (event) {
-  alert('DOMContentLoaded.');
-}, false);
-
-index.init();
+console.log('enter index..');

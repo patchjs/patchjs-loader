@@ -1,5 +1,5 @@
-const utils = {};
-
-utils.format = (date) => {
-  return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}` 
-};
+module.exports = {
+	format: function () {
+		console.log('format..');
+	}
+}

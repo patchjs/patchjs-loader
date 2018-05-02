@@ -3,41 +3,24 @@
   "description": "The examples of Patch.js",
   "version": "0.2.16",
   "author": {
-    "name": "hl103499",
-    "email": "hl103499@koubei.com"
+    "name": "yulongheli"
   },
   "contributors": [],
   "keywords": [
     "demo"
   ],
+  "license": "MIT",
   "scripts": {
-    "build": "patch-build",
-    "server": "patch-server",
-    "upload": "patch-upload"
+    "build": "webpack",
+    "start": "NODE_ENV=dev webpack-dev-server --inline false --content-base ./"
   },
   "devDependencies": {
-    "@alipay/patch-builder": "^0.2.17",
-    "@alipay/patch-uploader": "^0.1.1",
-    "eslint": "^3.19.0",
-    "eslint-config-standard": "^7.1.0",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^2.1.1"
-  },
-  "patchjs": {
-    "path": "http://127.0.0.1:8080/dist/default/",
-    "dist": "./dist/",
-    "files": {
-      "index.js": [
-        "./js/util.js",
-        "./js/index.js"
-      ],
-      "index.css": [
-        "./css/index.less"
-      ],
-      "common.js": [
-        "./js/util.js",
-        "./js/common.js"
-      ]
-    }
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "patchjs-webpack-plugin": "^0.1.1",
+    "style-loader": "^0.16.1",
+    "uglifyjs-webpack-plugin": "^0.4.1",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
   }
 }

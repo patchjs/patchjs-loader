@@ -1,9 +1,9 @@
 {
   "name": "patchjs-loader",
-  "description": "incremental script loader",
+  "description": "a incremental script loader",
   "version": "2.0.0",
   "author": {
-    "name": "yulongheli",
+    "name": "yulongheli"
   },
   "contributors": [],
   "keywords": [
@@ -11,7 +11,7 @@
     "patch",
     "patchjs",
     "performance",
-    "optimization",
+    "optimization"
   ],
   "repository" : {
     "type" : "git",
@@ -22,7 +22,6 @@
     "lint"
   ],
   "scripts": {
-    "site": "node buildsite.js",
     "build": "gulp",
     "server": "http-server",
     "test": "mocha-phantomjs http://localhost:8080/test/index.html",
