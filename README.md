@@ -77,6 +77,19 @@ environment configuration, such as dev, test, pre, prod.
 
 when the quota isn't enough, trigger the function of exceedQuotaErr.
 
+
+## URL Specification
+
+[STATIC_URL_PREFIX]/[VERSION]/[FILE_NAME]-[LOCAL_VERSION].[FILE_EXT]
+
+eg: http://static.domain.com/path/to/1.0.1/file-1.0.0.js
+
+### DIFF Result
+
+{"m":[IS_MODIFIED],"l":[CHUNK_SIZE],"c":[CODE_DATA]}
+
+eg: {"m":true,"l":20,"c":['var num = 0;']}
+
 ## Other
 
 support localStorage / Web SQL Database, but the two can only choose one.
