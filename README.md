@@ -63,7 +63,7 @@ Prefix: `http://static.domain.com/path/to/`
 
 **version** `String`
 
-the current page of version, .
+the current page of version.
 
 <br/>
 
