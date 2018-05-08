@@ -11,7 +11,9 @@
     "patch",
     "patchjs",
     "performance",
-    "optimization"
+    "optimization",
+    "pwa",
+    "service worker"
   ],
   "repository" : {
     "type" : "git",
