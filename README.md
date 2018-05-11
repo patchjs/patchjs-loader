@@ -30,6 +30,7 @@ patchjs.config({
 
 **default** `false`
 
+It enables the cache function.
 
 <br/>
 
@@ -37,7 +38,7 @@ patchjs.config({
 
 **default** `false`
 
-It enables the cache function.
+It enables the incremental load.
 
 <br/>
 
