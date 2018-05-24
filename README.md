@@ -30,6 +30,7 @@ patchjs.config({
 
 **default** `false`
 
+It enables the cache function.
 
 <br/>
 
@@ -37,7 +38,7 @@ patchjs.config({
 
 **default** `false`
 
-It enables the cache function.
+It enables the incremental load.
 
 <br/>
 
@@ -84,7 +85,7 @@ when the quota isn't enough, trigger the function of exceedQuotaErr.
 
 eg: http://static.domain.com/path/to/1.0.1/file-1.0.0.js
 
-### DIFF Result
+## DIFF Result
 
 {"m":[IS_MODIFIED],"l":[CHUNK_SIZE],"c":[CODE_DATA]}
 
