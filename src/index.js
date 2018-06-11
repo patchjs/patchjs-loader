@@ -225,7 +225,7 @@
     var jsCode = '';
     for (var i = 0, len = diffCodeArray.length; i < len; i++) {
       var code = diffCodeArray[i];
-      if (Object.prototype.toString(code) === '[object String]') {
+      if (Object.prototype.toString.call(code) === '[object String]') {
         jsCode += code;
       } else {
         var start = code[0] * chunkSize;
