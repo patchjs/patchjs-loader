@@ -32,7 +32,7 @@
       this.roll();
     },
     roll: function () {
-      for (var i = 0, count = 1, len = this.queue.length; i < len; i++) {
+      for (var i = 0, count = 0, len = this.queue.length; i < len; i++) {
         var asset = this.queue[i];
         if (asset.complete) {
           count ++;
@@ -44,6 +44,7 @@
             asset.onLoad(asset.reqUrl, asset.fromCache);
           }
           asset.complete = true;
+          count ++;
         }
         if (asset.wait) {
           if (i === count) {
@@ -51,6 +52,7 @@
               asset.wait();
             }
             asset.complete = true;
+            count ++;
           } else {
             break;
           }
@@ -169,6 +171,7 @@
           } else {
             assetsCode = data;
           }
+
           self.assetsManager.update(url, {
             ready: true,
             code: assetsCode,
