@@ -85,7 +85,7 @@ when the quota isn't enough, trigger the function of exceedQuotaErr.
 
 eg: http://static.domain.com/path/to/1.0.1/file-1.0.0.js
 
-## DIFF Result
+## Diff Result
 
 {"m":[IS_MODIFIED],"l":[CHUNK_SIZE],"c":[CODE_DATA]}
 
