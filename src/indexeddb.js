@@ -1,10 +1,10 @@
 ;(function () {
-  var db, status = 'PENDING', queue = [];
+  var db, dbErrorEvent, status = 'PENDING', queue = [];
 
   function set (key, value, callback) {
     callback = callback || function () {};
     if (!db) {
-      callback(false);
+      callback(false, dbErrorEvent);
       return;
     }
     var transaction = db.transaction(['assets'], 'readwrite');
@@ -14,8 +14,8 @@
     putReq.onsuccess = function () {
       callback(true);
     };
-    putReq.onerror = function () {
-      callback(false);
+    putReq.onerror = function (e) {
+      callback(false, e);
     };
   }
 
@@ -63,7 +63,8 @@
         db = e.target.result;
         triggerQueue();
       };
-      openReq.onerror = function() {
+      openReq.onerror = function(e) {
+        dbErrorEvent = e;
         status = 'COMPLETE';
         db = null;
         triggerQueue();

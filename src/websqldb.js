@@ -1,17 +1,18 @@
 ;(function () {
-  var db;
+  var db, dbErrorEvent;
   var cache = {
     init: function () {
       try {
         db = this.isSupported ?  window.openDatabase('patchjsdb', '1.0', 'patchjs database', 4 * 1024 * 1024) : null;
       } catch (e) {
+        dbErrorEvent = e;
         db = null;
       }
     },
     set: function (key, value, callback) {
       callback = callback || function () {};
       if (!db) {
-        callback(false);
+        callback(false, dbErrorEvent);
         return;
       }
       db.transaction(function (tx) {
@@ -20,21 +21,21 @@
           if (result.rows.length > 0) {
             ctx.executeSql('update assets set code = ?, version = ? where url = ?', [value.code, value.version, key], function () {
               callback(true);
-            }, function () {
-              callback(false);
+            }, function (ctx, e) {
+              callback(false, e);
             });
           } else {
             ctx.executeSql('insert into assets (url, code, version) values (?, ?, ?)', [key, value.code, value.version], function () {
               callback(true);
-            }, function () {
-              callback(false);
+            }, function (ctx, e) {
+              callback(false, e);
             });
           }
-        }, function () {
-          callback(false);
+        }, function (ctx, e) {
+          callback(false, e);
         });
-      }, function () {
-        callback(false);
+      }, function (tx, e) {
+        callback(false, e);
       });
     },
     get: function (key, callback) {

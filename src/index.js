@@ -178,12 +178,12 @@
             reqUrl: diffUrl
           });
           if (options.cache) {
-            self.cache.set(cacheKey, {code: assetsCode, version: options.version}, function (result){
+            self.cache.set(cacheKey, {code: assetsCode, version: options.version}, function (result, e) {
               if (!result) {
                 self.cache.remove(cacheKey);
                 var exceedQuotaErr = options.exceedQuotaErr;
                 if (exceedQuotaErr) {
-                  exceedQuotaErr.call(self, diffUrl);
+                  exceedQuotaErr.call(self, diffUrl, e);
                 }
               }
             });

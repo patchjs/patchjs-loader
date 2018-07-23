@@ -9,7 +9,7 @@
         localStorage['patchjs-' + key] = JSON.stringify(value);
         callback(true);
       } catch (e) {
-        callback(false);
+        callback(false, e);
       }
     },
     get: function (key, callback) {
