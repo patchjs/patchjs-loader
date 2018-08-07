@@ -111,17 +111,6 @@
   }
 
   patchjs.config = function (options) {
-    var metaConfig = document.querySelector('meta[name="patchjs"]');
-    if (metaConfig && !options.version) {
-      var content = metaConfig.getAttribute('content');
-      var contentArray = content.split(',');
-      for (var i = 0, len = contentArray.length; i < len; i++) {
-        var item = contentArray[i];
-        if (/version=/.test(item)) {
-          options.version = item.split('=')[1];
-        }
-      }
-    }
     this.options = options || {};
     for (var p in defaultOptions) {
       if (defaultOptions.hasOwnProperty(p)) {

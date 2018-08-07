@@ -6,4 +6,8 @@ utils.format();
 
 console.log('enter index..');
 
-console.log('hahahhahhahahha...');
+console.log('abcheliha...');
+
+require.ensure([], function (require) {
+  require('./dynamic.js');
+}, 'dynamic');

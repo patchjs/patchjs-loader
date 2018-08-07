@@ -18,6 +18,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist/' + pkg.name + '/' + pkg.version),
+    chunkFilename: '[name].js',
     filename: '[name].js'
   },
   module: {

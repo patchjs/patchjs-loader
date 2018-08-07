@@ -1,7 +1,7 @@
 {
   "name": "default",
   "description": "The examples of Patch.js",
-  "version": "0.2.17",
+  "version": "0.2.20",
   "author": {
     "name": "yulongheli"
   },
@@ -17,7 +17,7 @@
   "devDependencies": {
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^2.1.0",
-    "patchjs-webpack-plugin": "^0.1.1",
+    "patchjs-webpack-plugin": "^0.1.2",
     "style-loader": "^0.16.1",
     "uglifyjs-webpack-plugin": "^0.4.1",
     "webpack": "^2.3.3",
