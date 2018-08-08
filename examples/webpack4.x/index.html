@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no">
+  <title>Patch.js demo</title>
+  <script src="./patchjs-loader/2.0.1/websqldb.js"></script>
+  <script src="./patchjs-loader/2.0.1/index.js"></script>
+</head>
+<body>
+  <span>Hello Patch.js</span>
+  <span id="time"></span>
+</body>
+<script>
+  patchjs.config({
+    cache: true,
+    increment: true,
+    path: 'http://127.0.0.1:8080/dist/webpack4.x/',
+    version: '0.0.2',
+    exceedQuotaErr: function (url) {
+      // quota error
+    }
+  }).load('index.css').load('common.js').wait(function () {
+    console.log('common done!');
+  }).load('index.js', function (url, fromCache) {
+    console.log('index done!');
+  }).wait(function (){
+    console.log('wait...');
+  });
+</script>
+
+</html>
