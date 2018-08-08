@@ -102,8 +102,10 @@
           if(isDiffReq) {
             xhr(url.replace(diffVersionReg, ''), callback);
           } else {
-            throw new Error('Not Found');
+            throw new Error('url not found: ' + url);
           }
+        } else {
+          throw new Error('status: ' + req.status + ', statusText:' + req.statusText + ', url: ' + url);
         }
       }
     };

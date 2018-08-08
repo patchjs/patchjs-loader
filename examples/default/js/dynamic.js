@@ -1,2 +1,2 @@
 console.log('dynamic.js');
-console.log('heli.');
+console.log('heli by test');
