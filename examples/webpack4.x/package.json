@@ -1,7 +1,7 @@
 {
   "name": "webpack4.x",
   "description": "The examples of Patch.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
     "name": "yulongheli"
   },
@@ -17,7 +17,7 @@
   "devDependencies": {
     "css-loader": "^0.28.0",
     "style-loader": "^0.16.1",
-    "patchjs-webpack-plugin": "^0.1.4-beta",
+    "patchjs-webpack-plugin": "^0.1.4",
     "mini-css-extract-plugin": "^0.4.1",
     "style-loader": "^0.22.0",
     "webpack": "^4.16.5",
