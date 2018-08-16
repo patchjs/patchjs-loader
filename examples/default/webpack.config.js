@@ -17,9 +17,9 @@ module.exports = {
     common: './js/common.js'
   },
   output: {
-    path: path.join(__dirname, 'dist/' + pkg.name + '/' + pkg.version),
-    chunkFilename: '[name].js',
-    filename: '[name].js'
+    path: path.join(__dirname, 'dist/' + pkg.name) + '/' + pkg.version,
+    chunkFilename: 'custom/[name].js',
+    filename: 'custom/[name].js'
   },
   module: {
     loaders: [

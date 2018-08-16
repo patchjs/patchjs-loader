@@ -16,17 +16,16 @@
     cache: true,
     increment: true,
     path: 'http://127.0.0.1:8080/dist/default/',
-    version: '0.2.22',
+    version: '0.2.24',
     exceedQuotaErr: function (url) {
       // quota error
     }
-  }).load('index.css').load('common.js').wait(function () {
+  }).load('index.css').load('custom/common.js').wait(function () {
     console.log('common done!');
-  }).load('index.js', function (url, fromCache) {
+  }).load('custom/index.js', function (url, fromCache) {
     console.log('index done!');
   }).wait(function (){
     console.log('wait...');
   });
 </script>
-
 </html>
