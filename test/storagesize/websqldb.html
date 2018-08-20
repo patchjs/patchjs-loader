@@ -88,7 +88,7 @@
     };
 
     function query() {
-      cache.get('test', function (result) {
+      patchjs.cache.get('test', function (result) {
         alert(JSON.stringify(result));
       });
     }
@@ -97,7 +97,7 @@
     queryBtn.onclick = query;
 
     function del() {
-      cache.remove('test');
+      patchjs.cache.remove('test');
     }
 
     var delBtn = document.getElementById('delBtn');
