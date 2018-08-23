@@ -95,6 +95,6 @@ eg: {"m":true,"l":20,"c":['var num = 0;']}
 
 1. support localStorage / Web SQL Database / IndexedDB, but the two can only choose one .
 
-2. if remove the script loader, please the PatchjsWebpackPlugin in the webpack.config.js .
+2. if remove the script loader, please remove the PatchjsWebpackPlugin in the webpack.config.js .
 
 
