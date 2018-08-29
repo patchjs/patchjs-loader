@@ -69,7 +69,7 @@ path: `http://static.domain.com/path/to/`
 
 **env** `String`
 
-配置部署环境, 例如： dev, test, pre, prod。
+配置部署环境，用于隔离不同环境的缓存， 例如： dev, test, pre, prod。
 
 <br/>
 
