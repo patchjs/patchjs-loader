@@ -74,6 +74,12 @@ environment configuration, such as dev, test, pre, prod.
 
 <br/>
 
+**xhrWithCrediential** `Boolean`
+
+set the withCrediential of XMLHttpRequest object.
+
+<br/>
+
 **exceedQuotaErr** `Function`
 
 when the quota isn't enough, trigger the function of exceedQuotaErr.

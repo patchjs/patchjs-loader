@@ -73,6 +73,12 @@ path: `http://static.domain.com/path/to/`
 
 <br/>
 
+**xhrWithCrediential** `Boolean`
+
+设置 XMLHttpRequest 对象的 withCrediential 属性值。
+
+<br/>
+
 **exceedQuotaErr** `Function`
 
 当本地存储空间不足时，会触发这个回调函数。
@@ -94,4 +100,7 @@ eg: {"m":true,"l":20,"c":['var num = 0;']}
 1. 支持 localStorage / Web SQL Database / IndexedDB 缓存方式, 但是只需选择其中一个。
 
 2. 如果在页面删除 Patch.js 的脚本加载器，必须在 webpack.config.js 中删除 PatchjsWebpackPlugin。
+
+3. 如果访问页面的域名和静态资源的 URL 域名不一样，需要设置静态资源的 CORS Header。
+ 
 

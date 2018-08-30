@@ -4,7 +4,8 @@
     cache: false,
     increment: false,
     diffCount: 5,
-    env: ''
+    env: '',
+    xhrWithCrediential: false
   };
 
   function AssetsManager () {
@@ -89,9 +90,12 @@
     }
   }
 
-  function xhr(url, callback) {
+  function xhr(url, xhrWithCredentials, callback) {
     var req = new XMLHttpRequest();
     req.open('GET', url, true);
+    if (xhrWithCredentials) {
+      req.withCredentials = true;
+    }
     req.onreadystatechange = function() {
       if (req.readyState === 4) {
         var diffVersionReg = /-\d+\.\d+\.\d+/;
@@ -100,7 +104,7 @@
           callback(req.responseText, isDiffReq);
         } else if (req.status === 404) {
           if(isDiffReq) {
-            xhr(url.replace(diffVersionReg, ''), callback);
+            xhr(url.replace(diffVersionReg, ''), xhrWithCredentials, callback);
           } else {
             throw new Error('url not found: ' + url);
           }
@@ -154,7 +158,7 @@
       } else {
         var increment = options.cache && options.increment && assetsCode && self.withinCertainDiffRange(localVersion);
         var diffUrl = self.combineReqUrl(url, increment, localVersion);
-        xhr(diffUrl, function(data, isDiffReq) {
+        xhr(diffUrl, options.xhrWithCredentials, function(data, isDiffReq) {
           if (isDiffReq) {
             var diffData = JSON.parse(data);
             var code = diffData.c;
