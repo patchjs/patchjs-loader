@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,user-scalable=no">
   <title>Patch.js demo</title>
-  <script src="./patchjs-loader/2.0.2/websqldb.js"></script>
-  <script src="./patchjs-loader/2.0.2/index.js"></script>
+  <script src="./patchjs-loader/2.0.3/websqldb.js"></script>
+  <script src="./patchjs-loader/2.0.3/index.js"></script>
 </head>
 <body>
   <span>Hello Patch.js</span>
@@ -15,7 +15,7 @@
   patchjs.config({
     cache: true,
     increment: true,
-    path: 'http://127.0.0.1:8080/dist/default/',
+    path: '//127.0.0.1:8080/dist/default/',
     version: '0.2.22',
     exceedQuotaErr: function (url) {
       // quota error
