@@ -4,7 +4,7 @@
 
 Patch.js 是一个字符级增量更新的脚本加载工具，更快的加载速度、更少的用户流量。
 
-## 版本引用（建议内联）
+## 引用（建议内联）
 
 ```html
 <script src="./patchjs-loader/2.0.0/websqldb.js"></script>

@@ -123,6 +123,10 @@
         this.options[p] = this.options[p] || defaultOptions[p];
       }
     }
+    var path = options.path;
+    if (path && /^\/\//.test(path)) {
+      this.options.path = location.protocol + path;
+    }
     this.assetsManager = new AssetsManager();
     return this;
   };

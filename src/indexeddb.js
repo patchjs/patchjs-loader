@@ -56,7 +56,7 @@
       var openReq = window.indexedDB.open("patchjsdb");
       openReq.onupgradeneeded = function(e) {
         db = e.target.result;
-        var objectStore = db.createObjectStore('assets', { keyPath: 'url' });
+        db.createObjectStore('assets', { keyPath: 'url' });
       };
       openReq.onsuccess = function(e) {
         status = 'COMPLETE';
