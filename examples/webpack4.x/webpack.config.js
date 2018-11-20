@@ -7,10 +7,8 @@ var pkg = JSON.parse(fs.readFileSync('./package.json'));
 var webpack = require('webpack');
 
 var increment = true;
-var validateVersion = true;
 if (nodeEnv === 'dev') {
   increment = false;
-  validateVersion = true;
 }
 
 module.exports = {
@@ -38,7 +36,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HashedModuleIdsPlugin(),
-    new PatchjsWebpackPlugin({increment: increment,validateVersion: validateVersion, path: 'http://127.0.0.1:8080/dist/webpack4.x/'}),
+    new PatchjsWebpackPlugin({increment: increment, path: 'http://127.0.0.1:8080/dist/webpack4.x/'}),
     new MiniCssExtractPlugin('[name].css')
   ]
 };
